@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Janko's Portfolio</title>
+  <style>
+    :root {
+      --primary: #00e5ff;
+      --bg-dark: #0d0d0d;
+      --card-bg: rgba(255, 255, 255, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(to bottom, #001a33, #003366, #0d0d0d);
+      color: #ffffff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0; right: 0;
+      width: 100%;
+      background: rgba(13, 13, 13, 0.85);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: flex-end;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu { position: relative; }
+    .dots {
+      font-size: 32px;
+      cursor: pointer;
+      color: var(--primary);
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+    .dots:hover { transform: rotate(90deg); }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background: #1a1a1a;
+      border-radius: 12px;
+      min-width: 200px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .dropdown a {
+      display: block;
+      padding: 15px 20px;
+      color: #f0f0f0;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .dropdown a:hover {
+      background: var(--primary);
+      color: #000;
+      padding-left: 25px;
+    }
+    .dropdown.show { display: block; }
+
+    section {
+      min-height: 100vh;
+      padding: 120px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      max-width: 1000px;
+      margin: auto;
+      text-align: center; 
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+    }
+
+    h1, h2 {
+      color: var(--primary);
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: #ccc; max-width: 800px; }
+
+    /* Video Styling */
+    .video-container {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 2px solid var(--primary);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+      background: #000;
+    }
+
+    video {
+      width: 100%;
+      display: block;
+    }
+
+    .blog-container {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 15px;
+      border-left: 5px solid var(--primary);
+      text-align: left;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      list-style: none;
+      padding: 0;
+      width: 100%;
+    }
+    .skills-grid li {
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 229, 255, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #050505;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="menu">
+    <div class="dots" id="menuToggle">⋮</div>
+    <div class="dropdown" id="myDropdown">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="visible">
+  <img src="d:\Games\590433604_1193198136092627_4115100723556327259_n.jpg" alt="Janko Fernando" class="profile-pic">
+  <h1>Janko Algerson A. Fernando</h1>
+  <p>Student | Tech Enthusiast | Gamer</p>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I’m a student who thrives at the intersection of technology and creativity. Whether I'm gaming, reading, or diving into a new coding project, I'm always looking for ways to build something useful.
+   For me, learning isn’t just about grades, it’s about experimenting, building, and sharing what I discover with others. Every project I make, from simple websites to coding exercises, reflects my curiosity and the fun side of being student.</p>
+
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <ul class="skills-grid">
+    <li>C Programming</li>
+    <li>HTML & CSS</li>
+    <li>Java</li>
+    <li>Problem Solving</li>
+    <li>Team Collaboration</li>
+    <li>Multitasking</li>
+    <li>Cooking</li>
+    <li>Understanding</li>
+    <li>Typing Skills</li>
+    <li>Memorizing</li>
+  </ul>
+</section>
+
+<section id="blog">
+  <h2>My Blog</h2>
+  
+  <div class="video-container">
+    <video controls>
+      <source src="d:\Games\Fernando, Janko Algerson A. (Blog).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="blog-container">
+    <p><strong>Reflections of a Student Gamer</strong></p>
+    <p>
+      Hi! I’m just a regular student guy who enjoys the simple things in life. 
+      If I’m not busy with schoolwork, you’ll likely catch me reading sometimes for school, sometimes just for fun. 
+      I’m also heavily into gaming; it’s honestly the best way to chill and stay connected with friends. 
+    </p>
+    <p>
+      This blog is where I’ll be sharing random thoughts, casual scripts, and bits of my journey. 
+      It’s a space to share my perspective in a fun and relateable way. Stay tuned!
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:jankoabadierfernando@gmail.com" style="color:var(--primary)">jankoabadierfernando@gmail.com</a></p>
+  <p>Number: 09706574973 / 09920564108</p>
+  <p><a href="https://www.facebook.com/janko.fernando.3" target="_blank" style="color:var(--primary);">Facebook</a></p>
+</section>
+
+<footer>
+  <p>© 2026 Janko Algerson A. Fernando</p>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const dropdown = document.getElementById('myDropdown');
+
+  menuToggle.addEventListener('click', (e) => {
+    dropdown.classList.toggle('show');
+    e.stopPropagation();
+  });
+
+  document.querySelectorAll('.dropdown a').forEach(link => {
+    link.addEventListener('click', () => dropdown.classList.remove('show'));
+  });
+
+  document.addEventListener('click', () => dropdown.classList.remove('show'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
