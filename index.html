@@ -112,15 +112,21 @@
 
     /* Video Styling */
     .video-container {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 15px;
-      overflow: hidden;
-      border: 2px solid var(--primary);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      margin-bottom: 30px;
-      background: #000;
-    }
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Perfect for a YouTube Short */
+  margin: 0 auto;
+  aspect-ratio: 9 / 16; /* Keeps it vertical */
+  background: #000; /* If it's loading, it shows black first */
+  border: 2px solid #00e5ff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+}
 
     video {
       width: 100%;
