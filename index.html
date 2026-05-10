@@ -112,33 +112,31 @@
 
     /* Video Styling */
     .video-container {
-  position: relative;
-  width: 100%;
-  max-width: 400px; /* Perfect for a YouTube Short */
-  margin: 0 auto;
-  aspect-ratio: 9 / 16; /* Keeps it vertical */
-  background: #000; /* If it's loading, it shows black first */
-  border: 2px solid #00e5ff;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.video-container iframe {
-  width: 100%;
-  height: 100%;
-}
-
-    video {
+      position: relative;
       width: 100%;
-      display: block;
+      max-width: 350px;
+      margin: 0 auto 30px auto;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border: 2px solid var(--primary);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
     }
 
     .blog-container {
       background: var(--card-bg);
-      padding: 40px;
+      padding: 30px;
       border-radius: 15px;
       border-left: 5px solid var(--primary);
       text-align: left;
+      width: 100%;
+      max-width: 800px;
     }
 
     .skills-grid {
@@ -187,9 +185,8 @@
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I’m a student who thrives at the intersection of technology and creativity. Whether I'm gaming, reading, or diving into a new coding project, I'm always looking for ways to build something useful.
-   For me, learning isn’t just about grades, it’s about experimenting, building, and sharing what I discover with others. Every project I make, from simple websites to coding exercises, reflects my curiosity and the fun side of being student.</p>
-
+  <p>I’m a student who thrives at the intersection of technology and creativity. Whether I'm gaming, reading, or diving into a new coding project, I'm always looking for ways to build something useful.</p>
+  <p>For me, learning isn’t just about grades, it’s about experimenting, building, and sharing what I discover with others. Every project I make reflects my curiosity and the fun side of being a student.</p>
 </section>
 
 <section id="skills">
@@ -210,29 +207,26 @@
 
 <section id="blog">
   <h2>My Blog</h2>
-  <div class="video-container" style="max-width: 350px; margin: 0 auto; aspect-ratio: 9 / 16;">
+  <div class="video-container">
     <iframe 
-      width="100%" 
-      height="100%" 
-      src="https://youtube.com/embed/zoNcTm4lkYI" 
+      src="https://www.youtube.com/embed/zoNcTm4lkYI" 
       title="Janko's Blog Video" 
       frameborder="0" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
       allowfullscreen>
     </iframe>
   </div>
-</section>
 
   <div class="blog-container">
     <p><strong>Reflections of a Student Gamer</strong></p>
     <p>
       Hi! I’m just a regular student guy who enjoys the simple things in life. 
-      If I’m not busy with schoolwork, you’ll likely catch me reading sometimes for school, sometimes just for fun. 
+      If I’m not busy with schoolwork, you’ll likely catch me reading—sometimes for school, sometimes just for fun. 
       I’m also heavily into gaming; it’s honestly the best way to chill and stay connected with friends. 
     </p>
     <p>
       This blog is where I’ll be sharing random thoughts, casual scripts, and bits of my journey. 
-      It’s a space to share my perspective in a fun and relateable way. Stay tuned!
+      It’s a space to share my perspective in a fun and relatable way. Stay tuned!
     </p>
   </div>
 </section>
@@ -241,7 +235,7 @@
   <h2>Contact</h2>
   <p>Email: <a href="mailto:jankoabadierfernando@gmail.com" style="color:var(--primary)">jankoabadierfernando@gmail.com</a></p>
   <p>Number: 09706574973 / 09920564108</p>
-  <p><a href="https://www.facebook.com/janko.fernando.3" target="_blank" style="color:var(--primary);">Facebook</a></p>
+  <p><a href="https://www.facebook.com/janko.fernando.3" target="_blank" style="color:var(--primary);">Facebook Profile</a></p>
 </section>
 
 <footer>
@@ -265,7 +259,9 @@
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
   }, { threshold: 0.1 });
 
